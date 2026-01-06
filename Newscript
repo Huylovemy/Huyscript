@@ -145,98 +145,98 @@ _G.Settings = {
         ["Auto Train Sea Fruit Quest"] = true,
     },
     Items = {
-        ["Auto Soul Guitar"] = false,
-        ["Auto Rengoku"] = false,
-        ["Auto Hallow Scythe"] = false,
-        ["Auto Third Sea"] = false,
-        ["Auto Elite Hunter"] = false,
-        ["Auto Musketeer Hat"] = false,
-        ["Auto Dark Dagger"] = false,
-        ["Auto Rainbow Haki"] = false,
-        ["Auto Bartilo Quest"] = false,
-        ["Auto Swan Glasses"] = false,
-        ["Auto Train"] = false,
-        ["Auto Train Master"] = false,
-        ["Auto Train Quest"] = false,
-        ["Auto Train Mob"] = false,
-        ["Auto Train Island"] = false,
-        ["Auto Train Sea"] = false,
-        ["Auto Train Sea Boss"] = false,
-        ["Auto Train Sea Quest"] = false,
-        ["Auto Train Sea Mob"] = false,
-        ["Auto Train Sea Island"] = false,
-        ["Auto Train Sea Event"] = false,
-        ["Auto Train Sea Material"] = false,
-        ["Auto Train Sea Devil Fruit"] = false,
-        ["Auto Train Sea Fruit"] = false,
-        ["Auto Train Sea Boss Quest"] = false,
-        ["Auto Train Sea Mob Quest"] = false,
-        ["Auto Train Sea Island Quest"] = false,
-        ["Auto Train Sea Material Quest"] = false,
-        ["Auto Train Sea Devil Fruit Quest"] = false,
-        ["Auto Train Sea Fruit Quest"] = false,
+        ["Auto Soul Guitar"] = true,
+        ["Auto Rengoku"] = true,
+        ["Auto Hallow Scythe"] = true,
+        ["Auto Third Sea"] = true,
+        ["Auto Elite Hunter"] = true,
+        ["Auto Musketeer Hat"] = true,
+        ["Auto Dark Dagger"] = true,
+        ["Auto Rainbow Haki"] = true,
+        ["Auto Bartilo Quest"] = true,
+        ["Auto Swan Glasses"] = true,
+        ["Auto Train"] = true,
+        ["Auto Train Master"] = true,
+        ["Auto Train Quest"] = true,
+        ["Auto Train Mob"] = true,
+        ["Auto Train Island"] = true,
+        ["Auto Train Sea"] = true,
+        ["Auto Train Sea Boss"] = true,
+        ["Auto Train Sea Quest"] = true,
+        ["Auto Train Sea Mob"] = true,
+        ["Auto Train Sea Island"] = true,
+        ["Auto Train Sea Event"] = true,
+        ["Auto Train Sea Material"] = true,
+        ["Auto Train Sea Devil Fruit"] = true,
+        ["Auto Train Sea Fruit"] = true,
+        ["Auto Train Sea Boss Quest"] = true,
+        ["Auto Train Sea Mob Quest"] = true,
+        ["Auto Train Sea Island Quest"] = true,
+        ["Auto Train Sea Material Quest"] = true,
+        ["Auto Train Sea Devil Fruit Quest"] = true,
+        ["Auto Train Sea Fruit Quest"] = true,
     },
     LocalPlayer = {
-        ["Infinite Energy"] = false,
+        ["Infinite Energy"] = true,
         ["Infinite Ability"] = true,
-        ["Infinite Geppo"] = false,
-        ["Infinite Soru"] = false,
-        ["Dodge No Cooldown"] = false,
-        ["Active Race V3"] = false,
+        ["Infinite Geppo"] = true,
+        ["Infinite Soru"] = true,
+        ["Dodge No Cooldown"] = true,
+        ["Active Race V3"] = true,
         ["Active Race V4"] = true,
         ["Walk On Water"] = true,
-        ["No Clip"] = false,
-        ["Infinite Jump"] = false,
-        ["Infinite WalkSpeed"] = false,
-        ["Infinite Sprint"] = false,
-        ["Infinite Stamina"] = false,
-        ["Infinite Health"] = false,
-        ["Infinite MaxHealth"] = false,
-        ["Infinite Regen"] = false,
-        ["Infinite Speed"] = false,
-        ["Infinite Flight"] = false,
-        ["Infinite FlySpeed"] = false,
-        ["Infinite FlyHeight"] = false,
-        ["Infinite FlyGravity"] = false,
-        ["Infinite FlyJump"] = false,
-        ["Infinite FlyWalkSpeed"] = false,
-        ["Infinite FlySprint"] = false,
-        ["Infinite FlyStamina"] = false,
-        ["Infinite FlyHealth"] = false,
-        ["Infinite FlyMaxHealth"] = false,
-        ["Infinite FlyRegen"] = false,
+        ["No Clip"] = true,
+        ["Infinite Jump"] = true,
+        ["Infinite WalkSpeed"] = true,
+        ["Infinite Sprint"] = true,
+        ["Infinite Stamina"] = true,
+        ["Infinite Health"] = true,
+        ["Infinite MaxHealth"] = true,
+        ["Infinite Regen"] = true,
+        ["Infinite Speed"] = true,
+        ["Infinite Flight"] = true,
+        ["Infinite FlySpeed"] = true,
+        ["Infinite FlyHeight"] = true,
+        ["Infinite FlyGravity"] = true,
+        ["Infinite FlyJump"] = true,
+        ["Infinite FlyWalkSpeed"] = true,
+        ["Infinite FlySprint"] = true,
+        ["Infinite FlyStamina"] = true,
+        ["Infinite FlyHealth"] = true,
+        ["Infinite FlyMaxHealth"] = true,
+        ["Infinite FlyRegen"] = true,
     },
     Fruit = {
-        ["Auto Buy Random Fruit"] = false,
+        ["Auto Buy Random Fruit"] = true,
         ["Store Rarity Fruit"] = "Common - Mythical",
-        ["Auto Store Fruit"] = false,
-        ["Fruit Notification"] = false,
-        ["Teleport To Fruit"] = false,
-        ["Tween To Fruit"] = false,
+        ["Auto Store Fruit"] = true,
+        ["Fruit Notification"] = true,
+        ["Teleport To Fruit"] = true,
+        ["Tween To Fruit"] = true,
     },
     Misc = {
-        ["Hide Chat"] = false,
-        ["Hide Leaderboard"] = false,
-        ["Highlight Mode"] = false,
+        ["Hide Chat"] = true,
+        ["Hide Leaderboard"] = true,
+        ["Highlight Mode"] = true,
     },
     Raid = {
         ["Selected Chip"] = nil,
-        ["Auto Dungeon"] = false,
-        ["Auto Awaken"] = false,
+        ["Auto Dungeon"] = true,
+        ["Auto Awaken"] = true,
         ["Price Devil Fruit"] = 1000000,
-        ["Unstore Devil Fruit"] = false,
-        ["Law Raid"] = false,
+        ["Unstore Devil Fruit"] = true,
+        ["Law Raid"] = true,
     },
     Shop = {
-        ["Auto Buy Legendary Sword"] = false,
-        ["Auto Buy Haki Color"] = false,
+        ["Auto Buy Legendary Sword"] = true,
+        ["Auto Buy Haki Color"] = true,
     },
     Setting = {
         ["Mastery Health"] = 100,
         ["Kill Percent"] = 100,
     },
     SeaEvent = {
-        ["Auto Farm Terrorshark"] = false,
+        ["Auto Farm Terrorshark"] = true,
     },
 };
 
@@ -1656,7 +1656,7 @@ LocalPlayerSection:AddToggle({
                         if player and player.Character then
                             for _, part in ipairs(player.Character:GetChildren()) do
                                 if part:IsA("BasePart") then
-                                    part.CanCollide = false
+                                    part.CanCollide = true
                                 end
                             end
                         end
@@ -2462,7 +2462,7 @@ local EspSettingsSection = EspTab:DrawSection({
 EspSection:AddToggle({
     Name = "Enable ESP",
     Flag = "enable_esp",
-    Default = false,
+    Default = true,
     Callback = function(value)
         if value then
             task.spawn(function()
@@ -2584,7 +2584,7 @@ local TeleportLocationSection = TeleportTab:DrawSection({
 TeleportSection:AddToggle({
     Name = "Enable Teleport",
     Flag = "enable_teleport",
-    Default = false,
+    Default = true,
     Callback = function(value)
         _G.Settings.Teleport["Enable Teleport"] = value
     end
@@ -2593,7 +2593,7 @@ TeleportSection:AddToggle({
 TeleportSection:AddToggle({
     Name = "Enable Fast Teleport",
     Flag = "enable_fast_teleport",
-    Default = false,
+    Default = true,
     Callback = function(value)
         _G.Settings.Teleport["Enable Fast Teleport"] = value
     end
@@ -2602,7 +2602,7 @@ TeleportSection:AddToggle({
 TeleportSection:AddToggle({
     Name = "Enable No Clip",
     Flag = "enable_no_clip",
-    Default = false,
+    Default = true,
     Callback = function(value)
         _G.Settings.Teleport["Enable No Clip"] = value
         if value then
@@ -2614,7 +2614,7 @@ TeleportSection:AddToggle({
                         if player and player.Character then
                             for _, part in ipairs(player.Character:GetChildren()) do
                                 if part:IsA("BasePart") then
-                                    part.CanCollide = false
+                                    part.CanCollide = true
                                 end
                             end
                         end
