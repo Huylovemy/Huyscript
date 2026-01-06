@@ -5,14 +5,14 @@ task.wait(1)
 SoulsHub:Loader(nil, 1).yield()
 
 local FileWatcher = SoulsHub:ConfigManager({
-    Directory = "SoulsHub",
+    Directory = "Bear Hud",
     Config = "BloxFruits-Configs"
 });
 
 local Window = SoulsHub.new({
     Keybind = "LeftAlt",
     MinimizeKeybind = "LeftControl",
-    Theme = "Dark"
+    Theme = "Light"
 });
 
 local watermark = Window:Watermark();
