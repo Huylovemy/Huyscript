@@ -406,7 +406,7 @@ spawn(function()
 	wait(1);
 	((require(game.ReplicatedStorage.Notification)).new("<Color=Purple>[ Welcome " .. game.Players.LocalPlayer.DisplayName .. " ]<Color=/>")):Display();
 	wait(1);
-	((require(game.ReplicatedStorage.Notification)).new("<Color=Yellow>[ Enjoy for script ]<Color=/>")):Display();
+	((require(game.ReplicatedStorage.Notification)).new("<Color=Yellow>[ Huy script 🇻🇳]<Color=/>")):Display();
 end);
 function CheckQuest()
 	MyLevel = (game:GetService("Players")).LocalPlayer.Data.Level.Value;
