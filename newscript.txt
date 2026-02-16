@@ -37,13 +37,94 @@
 -- _G._secondaryData = nil
 -- _G.__userKey = nil
 print("✅ Security verification passed. Loading Bear hud...")
-if game.PlaceId == 2753915549 then
-	World1 = true;
-elseif game.PlaceId == 4442272183 then
-	World2 = true;
-elseif game.PlaceId == 7449423635 then
-	World3 = true;
-end;
+-- FIX XÁC ĐỊNH SEA CHO CẢ SERVER THƯỜNG VÀ VIP
+local function detectSea()
+    local placeId = game.PlaceId
+    
+    -- Kiểm tra PlaceId trực tiếp
+    if placeId == 2753915549 then
+        World1 = true; World2 = false; World3 = false
+        return
+    elseif placeId == 4442272183 then
+        World1 = false; World2 = true; World3 = false
+        return
+    elseif placeId == 7449423635 then
+        World1 = false; World2 = false; World3 = true
+        return
+    end
+    
+    -- DỰ PHÒNG: Kiểm tra bằng tên map trong game
+    local workspace = game:GetService("Workspace")
+    
+    -- Kiểm tra Sea 1 (các map đặc trưng)
+    if workspace:FindFirstChild("Jungle") or 
+       workspace:FindFirstChild("Desert") or 
+       workspace:FindFirstChild("Snow") or
+       workspace:FindFirstChild("Marine") or
+       workspace:FindFirstChild("Pirate Village") or
+       workspace:FindFirstChild("Magma") then
+        World1 = true; World2 = false; World3 = false
+        return
+    end
+    
+    -- Kiểm tra Sea 2
+    if workspace:FindFirstChild("Dressrosa") or 
+       workspace:FindFirstChild("GreenZone") or
+       workspace:FindFirstChild("Colosseum") or
+       workspace:FindFirstChild("Punk Hazard") or
+       workspace:FindFirstChild("Zombie") then
+        World1 = false; World2 = true; World3 = false
+        return
+    end
+    
+    -- Kiểm tra Sea 3
+    if workspace:FindFirstChild("Zou") or 
+       workspace:FindFirstChild("Hydra") or
+       workspace:FindFirstChild("Turtle") or
+       workspace:FindFirstChild("Mansion") or
+       workspace:FindFirstChild("Castle") then
+        World1 = false; World2 = false; World3 = true
+        return
+    end
+    
+    -- DỰ PHÒNG CUỐI: Kiểm tra bằng level của người chơi
+    local success, level = pcall(function()
+        return game:GetService("Players").LocalPlayer.Data.Level.Value
+    end)
+    
+    if success and level then
+        if level <= 700 then
+            World1 = true; World2 = false; World3 = false
+        elseif level <= 1500 then
+            World1 = false; World2 = true; World3 = false
+        else
+            World1 = false; World2 = false; World3 = true
+        end
+    else
+        -- Mặc định là Sea 1 nếu không xác định được
+        World1 = true; World2 = false; World3 = false
+    end
+end
+
+-- Gọi hàm phát hiện
+detectSea()
+
+-- Tự động phát hiện lại khi teleport
+game:GetService("TeleportService").TeleportInitFailed:Connect(function()
+    wait(2)
+    detectSea()
+end)
+
+-- Hiển thị thông báo
+spawn(function()
+    wait(3)
+    local sea = World1 and "Biển 1" or World2 and "Biển 2" or World3 and "Biển 3" or "Không xác định"
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Bear Hub",
+        Text = "Đang chạy ở " .. sea,
+        Duration = 3
+    })
+end)
 -- print("--------------------------------------------------------------------------");
 -- print("-- [[ Webhook ]] --");
 -- (loadstring(game:HttpGet("https://gitshare.me/backend/api/files/677ec71a-082b-4b8c-a1e8-f590f2ab286a/download")))();
